@@ -36,7 +36,7 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     st.write(data)
 
-#create bar plot for the variable Day of the week and make sure that the days of the week are organized from Monday to Sunday and note that the category levels are titled Monday to Sunday
+#bar plot for the variable Day of the week
 data['Day of the week'] = pd.Categorical(data['Day of the week'], categories=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ordered=True)
 st.bar_chart(data['Day of the week'].value_counts())
 
@@ -44,4 +44,5 @@ st.bar_chart(data['Day of the week'].value_counts())
 plt.figure(figsize=(10,5))
 data['NIBRS Code Name'].value_counts().plot(kind='bar')
 st.pyplot()
+
 
